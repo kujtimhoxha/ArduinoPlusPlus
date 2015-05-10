@@ -42,7 +42,7 @@ public class TogglePin {
             Sketch.functionCode.add(new Pair<>("toggleFunction", new Builders().newFunction("void", functionName,
                     new Builders().ifStatement(new Base()._digitalRead(pin), " == ", "LOW",
                             new Base().digitalWrite(pin, true)) +
-                            new Builders().elseStatement(new Base().digitalWrite(pin, false)))));
+                            new Builders().elseStatement(new Base().digitalWrite(pin, false))+new Builders().equalsStatement(timerVariable, new Base().millis()))));
 
         }
         else {
